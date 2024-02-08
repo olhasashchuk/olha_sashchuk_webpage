@@ -1,0 +1,144 @@
+.courses {
+   padding: 0 0 30px;
+   &__slider {
+      display: flex;
+      justify-content: center; 
+      align-items: center;
+      gap: 20px;  
+   
+   }
+
+   &__wrapper {
+      overflow: hidden;
+      padding: 0;
+   }
+
+   &__slide {
+      display: none;
+      opacity: 0;
+      animation: 0.5s ease-out;
+   }
+
+   &__image {
+      height: 500px;
+      position: relative;
+      @media screen and (min-width: $breakpoint-lg) {
+         width: 100vw;
+         flex: 1 0 400px;    
+      }
+   }
+
+   &__img, &__imgvertical {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+   }
+
+   &__imgvertical {
+      object-fit: contain;
+   }
+
+   &__inner {
+      padding: 20px;
+      @media screen and (min-width: $breakpoint-lg) {
+         display: flex;
+         flex-flow: column; 
+         justify-content: center; 
+         align-items: center;
+         // flex: 1 1 48%;    
+      }
+   }
+
+   &__inner-title {
+      @include subtitle;
+      margin: 0;
+   }
+
+   &__inner-name {
+      padding: 20px 0;
+      color: $text-color;
+      font-weight: 700;
+      @include text-link;
+
+      &:hover {
+         color: $hover-color;
+      }
+   }
+
+   &__inner-date {
+      color: $hover-color;
+      padding: 10px 0 20px 0;
+      font-size: 14px;
+      font-weight: 600;
+   }
+   
+   &__inner-descripcion {
+      h3 {
+         font-size: 16px;
+         font-weight: 600;
+         padding-bottom: 10px;
+      }
+
+      li {
+         padding: 5px 0;
+         font-size: 14px;
+         font-weight: 600;
+      }
+   }
+
+   &__slider-prev, &__slider-next {
+      width: 42px;
+      height: 42px;
+      border: 1px solid $accent-color;
+      border-radius: 50%;
+      position: relative;
+      transition: .3s ease;
+      flex: 0 0 42px;
+      cursor: pointer;
+
+      &::before {
+         content: '';
+         position: absolute;
+         top: 13px;
+         left: 15px;
+         width: 14px;
+         height:14px;
+         border-bottom: 2px solid $accent-color;
+         border-left: 2px solid $accent-color;
+         transform: rotate(45deg);
+      }
+
+      &:hover::before {
+         border-color: $hover-color;
+      }
+
+      &:hover {
+         border-color: $hover-color;
+      }
+   }
+
+   &__slider-next {
+      &::before {
+         left: 10px;
+         transform: rotate(-135deg);
+      }
+   }
+}
+
+
+.current {
+   opacity: 1;
+   display: block;
+   @media screen and (min-width: $breakpoint-lg) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+   }
+}
+
+

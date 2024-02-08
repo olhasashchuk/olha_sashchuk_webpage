@@ -1,0 +1,26 @@
+.myprojects {
+   padding: 50px 0 30px;
+   &__inner {
+      @include flex-center;
+      gap: 10px;
+   }
+
+   &__inner-name {
+      padding: 20px 0;
+      color: $text-color;
+      font-weight: 700;
+      @include text-link;
+
+      &:hover {
+         color: $hover-color;
+      }
+   }
+
+   &__video {
+      @include flex-center;
+   }
+}
+
+
+
+
